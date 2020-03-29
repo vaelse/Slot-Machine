@@ -202,9 +202,10 @@ GameObject:
   - component: {fileID: 239796447}
   - component: {fileID: 239796446}
   - component: {fileID: 239796448}
+  - component: {fileID: 239796449}
   m_Layer: 0
   m_Name: Row (2)
-  m_TagString: Untagged
+  m_TagString: Gem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -255,7 +256,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 1
+  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &239796447
 Transform:
@@ -284,6 +285,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayStart: 0.8
+--- !u!114 &239796449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239796445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 437c90b405a31e24394676341d0d9eec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &426183108
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,9 +804,10 @@ GameObject:
   - component: {fileID: 1282257593}
   - component: {fileID: 1282257592}
   - component: {fileID: 1282257594}
+  - component: {fileID: 1282257595}
   m_Layer: 0
   m_Name: Row
-  m_TagString: Untagged
+  m_TagString: Gem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -844,7 +858,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 1
+  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1282257593
 Transform:
@@ -873,6 +887,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayStart: 0
+--- !u!114 &1282257595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282257591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 437c90b405a31e24394676341d0d9eec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1543077677
 GameObject:
   m_ObjectHideFlags: 0
@@ -1111,9 +1137,10 @@ GameObject:
   - component: {fileID: 1626466636}
   - component: {fileID: 1626466635}
   - component: {fileID: 1626466637}
+  - component: {fileID: 1626466638}
   m_Layer: 0
   m_Name: Row (1)
-  m_TagString: Untagged
+  m_TagString: Gem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1164,7 +1191,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 1
+  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1626466636
 Transform:
@@ -1193,6 +1220,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayStart: 0.4
+--- !u!114 &1626466638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626466634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 437c90b405a31e24394676341d0d9eec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1756520062
 GameObject:
   m_ObjectHideFlags: 0
@@ -1205,7 +1244,6 @@ GameObject:
   - component: {fileID: 1756520067}
   - component: {fileID: 1756520066}
   - component: {fileID: 1756520065}
-  - component: {fileID: 1756520064}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1233,18 +1271,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1, y: -118}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1756520064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1756520062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8102a98c89265b147b3ba516945e1a2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1756520065
 MonoBehaviour:
   m_ObjectHideFlags: 0

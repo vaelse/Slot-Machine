@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class onPressSpin : MonoBehaviour
+public class Spin : MonoBehaviour
 {   
     public float delayStart;
     float m_LastPressTime;
@@ -20,7 +20,7 @@ public class onPressSpin : MonoBehaviour
     IEnumerator pressSpin()
     {
         {
-            int randomSpins = Random.Range(40, 50);
+            int randomSpins = Random.Range(40, 60);
 
             if (randomSpins % 2 != 0)
             {
@@ -28,10 +28,10 @@ public class onPressSpin : MonoBehaviour
             }
             for (int i = 0; i < randomSpins; i++)
             {
-                if (gameObject.transform.position.y <= -14)
+                if (gameObject.transform.position.y <= -14f)
                     gameObject.transform.position = new Vector2(gameObject.transform.position.x, 16.8f);
-                gameObject.gameObject.transform.position = new Vector2(gameObject.gameObject.transform.position.x, gameObject.gameObject.transform.position.y - 2.25f);
-                yield return new WaitForSeconds(0.04f);
+                gameObject.gameObject.transform.position = new Vector2(gameObject.gameObject.transform.position.x, gameObject.gameObject.transform.position.y - 2.24f);
+                yield return new WaitForSeconds(0.03f);
             }
         }      
     }
