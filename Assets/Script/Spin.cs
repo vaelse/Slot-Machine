@@ -6,14 +6,18 @@ using UnityEngine.UI;
 public class Spin : MonoBehaviour
 {   
     public float delayStart;
-    float m_LastPressTime;
-    float m_PressDelay = 3f;
+    float spinButtonPressTime;
+    float spinButtonDelay = 3f;
+    public Text betText;
+
+
+
 
     public void delayed()
     {
-        if (m_LastPressTime + m_PressDelay > Time.unscaledTime)
-            return;
-        m_LastPressTime = Time.unscaledTime;
+            if (spinButtonPressTime + spinButtonDelay > Time.unscaledTime || betText.text == 0.ToString())
+                return;
+        spinButtonPressTime = Time.unscaledTime;
         Invoke("elo", delayStart);
     }
 
