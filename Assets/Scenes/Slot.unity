@@ -202,7 +202,6 @@ GameObject:
   - component: {fileID: 239796447}
   - component: {fileID: 239796446}
   - component: {fileID: 239796448}
-  - component: {fileID: 239796449}
   m_Layer: 0
   m_Name: Row (2)
   m_TagString: Gem
@@ -286,18 +285,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayStart: 0.8
   betText: {fileID: 633505560}
---- !u!114 &239796449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 239796445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 437c90b405a31e24394676341d0d9eec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  Balance: {fileID: 0}
+  wintext: {fileID: 0}
 --- !u!1 &381791114
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,6 +316,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92bcaf4081fdb1e46b84c1f245a7846d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Rows:
+  - {fileID: 1282257591}
+  - {fileID: 1626466634}
+  - {fileID: 239796445}
   Bet: {fileID: 633505560}
   Balance: {fileID: 1349367314}
   Won: {fileID: 1074827453}
@@ -1201,7 +1194,6 @@ GameObject:
   - component: {fileID: 1282257593}
   - component: {fileID: 1282257592}
   - component: {fileID: 1282257594}
-  - component: {fileID: 1282257595}
   m_Layer: 0
   m_Name: Row
   m_TagString: Gem
@@ -1285,18 +1277,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayStart: 0
   betText: {fileID: 633505560}
---- !u!114 &1282257595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1282257591}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 437c90b405a31e24394676341d0d9eec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  Balance: {fileID: 0}
+  wintext: {fileID: 0}
 --- !u!1 &1293688007
 GameObject:
   m_ObjectHideFlags: 0
@@ -1860,7 +1842,6 @@ GameObject:
   - component: {fileID: 1626466636}
   - component: {fileID: 1626466635}
   - component: {fileID: 1626466637}
-  - component: {fileID: 1626466638}
   m_Layer: 0
   m_Name: Row (1)
   m_TagString: Gem
@@ -1944,18 +1925,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayStart: 0.4
   betText: {fileID: 633505560}
---- !u!114 &1626466638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1626466634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 437c90b405a31e24394676341d0d9eec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  Balance: {fileID: 0}
+  wintext: {fileID: 0}
 --- !u!1 &1756520062
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,28 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Spin : MonoBehaviour
-{   
+{
+   
     public float delayStart;
     float spinButtonPressTime;
     float spinButtonDelay = 3f;
     public Text betText;
+    public Text Balance;
+    public Text wintext;
 
-
-
-
-    public void delayed()
+    private void Start()
     {
-            if (spinButtonPressTime + spinButtonDelay > Time.unscaledTime || betText.text == 0.ToString())
-                return;
-        spinButtonPressTime = Time.unscaledTime;
-        Invoke("elo", delayStart);
+        gameObject.tag = "Untagged";
     }
-
     IEnumerator pressSpin()
-    {
-        {
+    {       
             int randomSpins = Random.Range(40, 60);
-
             if (randomSpins % 2 != 0)
             {
                 randomSpins += 1;
@@ -37,12 +31,54 @@ public class Spin : MonoBehaviour
                 gameObject.gameObject.transform.position = new Vector2(gameObject.gameObject.transform.position.x, gameObject.gameObject.transform.position.y - 2.24f);
                 yield return new WaitForSeconds(0.03f);
             }
-        }      
+        
+        if (gameObject.transform.position.y < 17 && gameObject.transform.position.y > 13)
+        {
+            gameObject.tag = "Gem";
+        }
+        else if (gameObject.transform.position.y < 13 && gameObject.transform.position.y > 8)
+        {
+            gameObject.tag = "Lemon";
+        }
+        else if (gameObject.transform.position.y < 8 && gameObject.transform.position.y > 4)
+        {
+            gameObject.tag = "Cherry";
+        }
+        else if (gameObject.transform.position.y < 4 && gameObject.transform.position.y > -1)
+        {
+            gameObject.tag = "Seven";
+        }
+        else if (gameObject.transform.position.y < -1 && gameObject.transform.position.y > -5)
+        {
+            gameObject.tag = "Bar";
+        }
+        else if (gameObject.transform.position.y < -5 && gameObject.transform.position.y > -10)
+        {
+            gameObject.tag = "Watermelon";
+        }
+        else if (gameObject.transform.position.y < -10 && gameObject.transform.position.y > -13)
+        {
+            gameObject.tag = "Crown";
+        }
+        else if (gameObject.transform.position.y < -14)
+        {
+            gameObject.tag = "Gem";
+        }
     }
+
 
     public void elo()
-    {    
+    {
         StartCoroutine("pressSpin");
-
     }
+
+    public void delayed()
+    {
+
+        if (spinButtonPressTime + spinButtonDelay > Time.unscaledTime || betText.text == 0.ToString())
+            return;     
+        spinButtonPressTime = Time.unscaledTime;
+        Invoke("elo", delayStart);
+    }
+    
 }
