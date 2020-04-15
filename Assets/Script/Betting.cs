@@ -49,6 +49,7 @@ public class Betting : MonoBehaviour
     // Set win multiplayer based of tags
     public void WinCondition()
     {
+
         if (Rows[0].tag == "Lemon" && Rows[1].tag == "Lemon" && Rows[2].tag == "Lemon")
         {
             winMutliplier = 1.2f;
@@ -110,6 +111,11 @@ public class Betting : MonoBehaviour
     public void xddsadas()
     {
         initialWin = winMutliplier;
+    }
+
+    public void asd()
+    {
+        initialBalance += initialWin;
     }
 }
 

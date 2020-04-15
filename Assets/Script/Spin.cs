@@ -12,7 +12,6 @@ public class Spin : MonoBehaviour
     public Text betText;
     public Text Balance;
     public Text wintext;
-    float xddd = 0;
     bool spin;
 
     private void Start()
@@ -22,6 +21,7 @@ public class Spin : MonoBehaviour
 
     IEnumerator pressSpin()
     {
+ 
             spin = true;
             int randomSpins = Random.Range(40, 60);
             if (randomSpins % 2 != 0)
@@ -67,6 +67,8 @@ public class Spin : MonoBehaviour
         {
             gameObject.tag = "Gem";
         }
+        var kutas = FindObjectOfType<Betting>();
+        kutas.xddsadas();
         spin = false;
     }
 
@@ -81,12 +83,5 @@ public class Spin : MonoBehaviour
             return;
         spinButtonPressTime = Time.unscaledTime;
         Invoke("elo", delayStart);
-    }
-
-    private void Update()
-    {
-        var kutas = FindObjectOfType<Betting>();     
-            kutas.xddsadas();
-        
     }
 }
