@@ -12,26 +12,29 @@ public class Spin : MonoBehaviour
     public Text betText;
     public Text Balance;
     public Text wintext;
+    float xddd = 0;
+    bool spin;
 
     private void Start()
-    {
+    {    
         gameObject.tag = "Untagged";
     }
+
     IEnumerator pressSpin()
-    {       
+    {
+            spin = true;
             int randomSpins = Random.Range(40, 60);
             if (randomSpins % 2 != 0)
             {
                 randomSpins += 1;
             }
-            for (int i = 0; i < randomSpins; i++)
+        for (int i = 0; i < randomSpins; i++)
             {
                 if (gameObject.transform.position.y <= -14f)
                     gameObject.transform.position = new Vector2(gameObject.transform.position.x, 16.8f);
                 gameObject.gameObject.transform.position = new Vector2(gameObject.gameObject.transform.position.x, gameObject.gameObject.transform.position.y - 2.24f);
-                yield return new WaitForSeconds(0.03f);
-            }
-        
+                yield return new WaitForSeconds(0.035f);
+            }    
         if (gameObject.transform.position.y < 17 && gameObject.transform.position.y > 13)
         {
             gameObject.tag = "Gem";
@@ -64,8 +67,8 @@ public class Spin : MonoBehaviour
         {
             gameObject.tag = "Gem";
         }
+        spin = false;
     }
-
 
     public void elo()
     {
@@ -74,11 +77,16 @@ public class Spin : MonoBehaviour
 
     public void delayed()
     {
-
         if (spinButtonPressTime + spinButtonDelay > Time.unscaledTime || betText.text == 0.ToString())
-            return;     
+            return;
         spinButtonPressTime = Time.unscaledTime;
         Invoke("elo", delayStart);
     }
-    
+
+    private void Update()
+    {
+        var kutas = FindObjectOfType<Betting>();     
+            kutas.xddsadas();
+        
+    }
 }
