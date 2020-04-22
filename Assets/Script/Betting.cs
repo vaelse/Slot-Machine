@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class Betting : MonoBehaviour
 {
     public GameObject[] Rows;
-    public Text Bet;
-    public Text Balance;
-    public Text Won;
+    public Text betText;
+    public Text balanceText;
+    public Text winText;
     float increaseBet = 5;
     float initialBet = 0;
     float initialBalance = 500;
@@ -19,10 +19,8 @@ public class Betting : MonoBehaviour
 
     private void Update()
     {
-        WinCondition(); 
-        Won.text = initialWin.ToString();
-        Bet.text = initialBet.ToString();
-        Balance.text = initialBalance.ToString();
+        betText.text = initialBet.ToString();
+        balanceText.text = initialBalance.ToString();
     }
 
     //Increase how much u want to bet 
@@ -34,88 +32,110 @@ public class Betting : MonoBehaviour
     public void DecreaseBet()
     {
         if (initialBet > 0)
-        initialBet -= increaseBet;
+            initialBet -= increaseBet;
     }
 
     //Subtract bet amount from balance
     public void SpinCost()
-    {  
+    {
         if (spinButtonPressTime + spinButtonDelay > Time.unscaledTime)
             return;
         spinButtonPressTime = Time.unscaledTime;
         initialBalance -= initialBet;
     }
 
-    // Set win multiplayer based of tags
+    //Change text to win amount and adds that to balance
+    public void WinAmount()
+    {
+        winText.text = (winMutliplier * initialBet).ToString();
+        initialBalance += float.Parse(winText.text);
+    }
+
+    //Set active for win text
+    public void WinTextActive()
+    {
+        if (winMutliplier > 0)
+        {
+            winText.gameObject.SetActive(true);
+        }
+        else
+        {
+            winText.gameObject.SetActive(false);
+        }
+    }
+
+    //Disable win text after animation ends
+    public void Text()
+    {
+        winText.gameObject.SetActive(false);
+    }
+
+    // Set win multiplayer based on tags
     public void WinCondition()
     {
-
         if (Rows[0].tag == "Lemon" && Rows[1].tag == "Lemon" && Rows[2].tag == "Lemon")
         {
-            winMutliplier = 1.2f;
+            winMutliplier = 3f;
         }
         else if ((Rows[0].tag == "Lemon" && Rows[1].tag == "Lemon") || (Rows[1].tag == "Lemon" && Rows[2].tag == "Lemon") || (Rows[0].tag == "Lemon" && Rows[2].tag == "Lemon"))
         {
-            winMutliplier = 2f;
-        }
-        else if ((Rows[0].tag == "Gem" && Rows[1].tag == "Gem") || (Rows[1].tag == "Gem" && Rows[2].tag == "Gem") || (Rows[0].tag == "Gem" && Rows[2].tag == "Gem"))
-        {
-            winMutliplier = 1.4f;
+            winMutliplier = 1.5f;
         }
         else if (Rows[0].tag == "Gem" && Rows[1].tag == "Gem" && Rows[2].tag == "Gem")
         {
-            winMutliplier = 2.5f;
+            winMutliplier = 3f;
         }
-        else if ((Rows[0].tag == "Cherry" && Rows[1].tag == "Cherry") || (Rows[1].tag == "Cherry" && Rows[2].tag == "Cherry") || (Rows[0].tag == "Cherry" && Rows[2].tag == "Cherry"))
+        else if ((Rows[0].tag == "Gem" && Rows[1].tag == "Gem") || (Rows[1].tag == "Gem" && Rows[2].tag == "Gem") || (Rows[0].tag == "Gem" && Rows[2].tag == "Gem"))
         {
-            winMutliplier = 1.6f;
+            winMutliplier = 1.5f;
         }
         else if (Rows[0].tag == "Cherry" && Rows[1].tag == "Cherry" && Rows[2].tag == "Cherry")
         {
             winMutliplier = 3f;
         }
-        else if ((Rows[0].tag == "Watermelon" && Rows[1].tag == "Watermelon") || (Rows[1].tag == "Watermelon" && Rows[2].tag == "Watermelon") || (Rows[0].tag == "Watermelon" && Rows[2].tag == "Watermelon"))
+        else if ((Rows[0].tag == "Cherry" && Rows[1].tag == "Cherry") || (Rows[1].tag == "Cherry" && Rows[2].tag == "Cherry") || (Rows[0].tag == "Cherry" && Rows[2].tag == "Cherry"))
         {
-            winMutliplier = 1.8f;
+            winMutliplier = 1.5f;
         }
         else if (Rows[0].tag == "Watermelon" && Rows[1].tag == "Watermelon" && Rows[2].tag == "Watermelon")
         {
-            winMutliplier = 3.5f;
+            winMutliplier = 3f;
         }
-        else if ((Rows[0].tag == "Crown" && Rows[1].tag == "Crown") || (Rows[1].tag == "Crown" && Rows[2].tag == "Crown") || (Rows[0].tag == "Crown" && Rows[2].tag == "Crown"))
+        else if ((Rows[0].tag == "Watermelon" && Rows[1].tag == "Watermelon") || (Rows[1].tag == "Watermelon" && Rows[2].tag == "Watermelon") || (Rows[0].tag == "Watermelon" && Rows[2].tag == "Watermelon"))
         {
-            winMutliplier = 2f;
+            winMutliplier = 1.5f;
         }
         else if (Rows[0].tag == "Crown" && Rows[1].tag == "Crown" && Rows[2].tag == "Crown")
         {
-            winMutliplier = 4f;
+            winMutliplier = 3f;
         }
-        else if ((Rows[0].tag == "Seven" && Rows[1].tag == "Seven") || (Rows[1].tag == "Seven" && Rows[2].tag == "Seven") || (Rows[0].tag == "Seven" && Rows[2].tag == "Seven"))
+        else if ((Rows[0].tag == "Crown" && Rows[1].tag == "Crown") || (Rows[1].tag == "Crown" && Rows[2].tag == "Crown") || (Rows[0].tag == "Crown" && Rows[2].tag == "Crown"))
         {
-            winMutliplier = 2.2f; ;
+            winMutliplier = 1.5f;
         }
         else if (Rows[0].tag == "Seven" && Rows[1].tag == "Seven" && Rows[2].tag == "Seven")
         {
-            winMutliplier = 4.5f;
+            winMutliplier = 3f; ;
         }
-        else if ((Rows[0].tag == "Bar" && Rows[1].tag == "Bar") || (Rows[1].tag == "Bar" && Rows[2].tag == "Bar") || (Rows[0].tag == "Bar" && Rows[2].tag == "Bar"))
+        else if ((Rows[0].tag == "Seven" && Rows[1].tag == "Seven") || (Rows[1].tag == "Seven" && Rows[2].tag == "Seven") || (Rows[0].tag == "Seven" && Rows[2].tag == "Seven"))
         {
-            winMutliplier = 2.4f;
+            winMutliplier = 1.5f;
         }
         else if (Rows[0].tag == "Bar" && Rows[1].tag == "Bar" && Rows[2].tag == "Bar")
         {
-            winMutliplier = 5f;
+            winMutliplier = 3f;
         }
-    } 
-
-    public void xddsadas()
-    {
-        initialWin = winMutliplier;
-    }
-
-    public void asd()
-    {
-        initialBalance += initialWin;
+        else if ((Rows[0].tag == "Bar" && Rows[1].tag == "Bar") || (Rows[1].tag == "Bar" && Rows[2].tag == "Bar") || (Rows[0].tag == "Bar" && Rows[2].tag == "Bar"))
+        {
+            winMutliplier = 1.5f;
+        }
+        else
+        {
+            winMutliplier = 0;
+        }
+        WinAmount();
+        WinTextActive();
+        Invoke("Text", 3f);
     }
 }
 

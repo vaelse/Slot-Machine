@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Spin : MonoBehaviour
+public class Spin1 : MonoBehaviour
 {
     public float delayStart;
     float spinButtonPressTime;
     float spinButtonDelay = 3f;
     public Text betText;
-
 
     private void Start()
     {
@@ -18,7 +17,7 @@ public class Spin : MonoBehaviour
 
     IEnumerator pressSpin()
     {
-        var betManager = FindObjectOfType<Betting>();
+        var kutas = FindObjectOfType<Betting>();
         int randomSpins = Random.Range(40, 60);
         if (randomSpins % 2 != 0)
         {
@@ -63,7 +62,6 @@ public class Spin : MonoBehaviour
         {
             gameObject.tag = "Gem";
         }
-        betManager.WinCondition();
     }
 
     public void elo()
