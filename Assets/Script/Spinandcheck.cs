@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Spin1 : MonoBehaviour
+public class Spinandcheck : MonoBehaviour
 {
     public float delayStart;
     float spinButtonPressTime;
     float spinButtonDelay = 3f;
     public Text betText;
+    public Text balanceText;
 
     private void Start()
     {
@@ -17,7 +18,7 @@ public class Spin1 : MonoBehaviour
 
     IEnumerator pressSpin()
     {
-        var kutas = FindObjectOfType<Betting>();
+        var betManager = FindObjectOfType<Betting>();
         int randomSpins = Random.Range(40, 60);
         if (randomSpins % 2 != 0)
         {
@@ -62,6 +63,7 @@ public class Spin1 : MonoBehaviour
         {
             gameObject.tag = "Gem";
         }
+        betManager.WinCondition();
     }
 
     public void elo()
@@ -71,7 +73,7 @@ public class Spin1 : MonoBehaviour
 
     public void delayed()
     {
-        if (spinButtonPressTime + spinButtonDelay > Time.unscaledTime || betText.text == 0.ToString())
+        if (spinButtonPressTime + spinButtonDelay > Time.unscaledTime || betText.text == 0.ToString() || balanceText.text == 0.ToString())
             return;
         spinButtonPressTime = Time.unscaledTime;
         Invoke("elo", delayStart);

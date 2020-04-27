@@ -8,24 +8,29 @@ public class Betting : MonoBehaviour
     public GameObject[] Rows;
     public Text betText;
     public Text balanceText;
-    public Text winText;
-    float increaseBet = 5;
+    public Text[] winText;
+    float increaseBet = 50;
     float initialBet = 0;
     float initialBalance = 500;
-    float initialWin = 0;
     float spinButtonPressTime;
     float spinButtonDelay = 3f;
     float winMutliplier;
 
     private void Update()
     {
+        if (initialBalance < 0)
+        {
+            initialBalance = 0;
+        }   
         betText.text = initialBet.ToString();
         balanceText.text = initialBalance.ToString();
+       
     }
 
     //Increase how much u want to bet 
     public void IncreaseBet()
     {
+        if(initialBet < initialBalance)
         initialBet += increaseBet;
     }
     //Decrease how much u want to bet 
@@ -38,7 +43,7 @@ public class Betting : MonoBehaviour
     //Subtract bet amount from balance
     public void SpinCost()
     {
-        if (spinButtonPressTime + spinButtonDelay > Time.unscaledTime)
+        if (spinButtonPressTime + spinButtonDelay > Time.unscaledTime || initialBalance < 0)
             return;
         spinButtonPressTime = Time.unscaledTime;
         initialBalance -= initialBet;
@@ -47,27 +52,31 @@ public class Betting : MonoBehaviour
     //Change text to win amount and adds that to balance
     public void WinAmount()
     {
-        winText.text = (winMutliplier * initialBet).ToString();
-        initialBalance += float.Parse(winText.text);
+        winText[0].text =(winMutliplier * initialBet).ToString();
+        initialBalance += float.Parse(winText[0].text);
     }
 
     //Set active for win text
     public void WinTextActive()
     {
-        if (winMutliplier > 0)
+        foreach (Text text in winText)
         {
-            winText.gameObject.SetActive(true);
-        }
-        else
-        {
-            winText.gameObject.SetActive(false);
+            if (winMutliplier > 0)
+            {
+                text.gameObject.SetActive(true);
+            }
+            else
+            {
+                text.gameObject.SetActive(false);
+            }
         }
     }
 
     //Disable win text after animation ends
-    public void Text()
+    public void WinTextDisable()
     {
-        winText.gameObject.SetActive(false);
+        foreach (Text text in winText)
+            text.gameObject.SetActive(false);
     }
 
     // Set win multiplayer based on tags
@@ -135,7 +144,11 @@ public class Betting : MonoBehaviour
         }
         WinAmount();
         WinTextActive();
-        Invoke("Text", 3f);
+        Invoke("WinTextDisable", 3f);
+        if (initialBalance < initialBet)
+        {
+            initialBet = initialBalance;
+        }
     }
 }
 

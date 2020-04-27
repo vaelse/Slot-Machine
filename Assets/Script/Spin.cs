@@ -9,7 +9,7 @@ public class Spin : MonoBehaviour
     float spinButtonPressTime;
     float spinButtonDelay = 3f;
     public Text betText;
-
+    public Text balanceText;
 
     private void Start()
     {
@@ -18,7 +18,7 @@ public class Spin : MonoBehaviour
 
     IEnumerator pressSpin()
     {
-        var betManager = FindObjectOfType<Betting>();
+        var kutas = FindObjectOfType<Betting>();
         int randomSpins = Random.Range(40, 60);
         if (randomSpins % 2 != 0)
         {
@@ -63,7 +63,6 @@ public class Spin : MonoBehaviour
         {
             gameObject.tag = "Gem";
         }
-        betManager.WinCondition();
     }
 
     public void elo()
@@ -73,7 +72,7 @@ public class Spin : MonoBehaviour
 
     public void delayed()
     {
-        if (spinButtonPressTime + spinButtonDelay > Time.unscaledTime || betText.text == 0.ToString())
+        if (spinButtonPressTime + spinButtonDelay > Time.unscaledTime || betText.text == 0.ToString() || balanceText.text == 0.ToString())
             return;
         spinButtonPressTime = Time.unscaledTime;
         Invoke("elo", delayStart);
