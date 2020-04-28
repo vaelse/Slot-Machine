@@ -15,6 +15,7 @@ public class Betting : MonoBehaviour
     float spinButtonPressTime;
     float spinButtonDelay = 3f;
     float winMutliplier;
+    public GameObject Panel;
 
     private void Update()
     {
@@ -24,20 +25,32 @@ public class Betting : MonoBehaviour
         }   
         betText.text = initialBet.ToString();
         balanceText.text = initialBalance.ToString();
-       
+
+        if (balanceText.text == 0.ToString() && betText.text == 0.ToString())
+        {
+            Panel.SetActive(true);
+        }
     }
 
     //Increase how much u want to bet 
     public void IncreaseBet()
     {
-        if(initialBet < initialBalance)
+        if(initialBet < initialBalance)           
         initialBet += increaseBet;
+        if (initialBet > initialBalance)
+        {
+            initialBet = initialBalance;
+        }
     }
     //Decrease how much u want to bet 
     public void DecreaseBet()
     {
         if (initialBet > 0)
             initialBet -= increaseBet;
+        if(initialBet < 0)
+        {
+            initialBet = 0;
+        }
     }
 
     //Subtract bet amount from balance
@@ -78,7 +91,15 @@ public class Betting : MonoBehaviour
         foreach (Text text in winText)
             text.gameObject.SetActive(false);
     }
-
+    public void active()
+    {
+        Panel.SetActive(true);
+    }
+    public void Onclick()
+    {
+        initialBalance = 500;
+        Panel.SetActive(false);
+    }
     // Set win multiplayer based on tags
     public void WinCondition()
     {

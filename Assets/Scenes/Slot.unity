@@ -321,7 +321,9 @@ MonoBehaviour:
   - {fileID: 239796445}
   betText: {fileID: 633505560}
   balanceText: {fileID: 1349367314}
-  winText: {fileID: 386972652}
+  winText:
+  - {fileID: 386972652}
+  - {fileID: 1512303772}
 --- !u!4 &381791116
 Transform:
   m_ObjectHideFlags: 0
@@ -349,6 +351,7 @@ GameObject:
   - component: {fileID: 386972652}
   - component: {fileID: 386972651}
   - component: {fileID: 386972654}
+  - component: {fileID: 386972655}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -443,11 +446,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 386972649}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d5b087633403aa41acb227c23e29486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &386972655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386972649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &426183108
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,6 +1740,7 @@ GameObject:
   - component: {fileID: 1512303772}
   - component: {fileID: 1512303771}
   - component: {fileID: 1512303770}
+  - component: {fileID: 1512303774}
   m_Layer: 5
   m_Name: Text (1)
   m_TagString: Untagged
@@ -1755,7 +1774,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1512303768}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d5b087633403aa41acb227c23e29486, type: 3}
   m_Name: 
@@ -1805,7 +1824,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 200
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1821,6 +1840,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1512303768}
   m_CullTransparentMesh: 0
+--- !u!114 &1512303774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512303768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: 1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1543077677
 GameObject:
   m_ObjectHideFlags: 0
