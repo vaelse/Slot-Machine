@@ -18,25 +18,26 @@ public class Betting : MonoBehaviour
     public GameObject Panel;
 
     private void Update()
-    {
-        if (initialBalance < 0)
-        {
-            initialBalance = 0;
-        }   
+    {         
         betText.text = initialBet.ToString();
         balanceText.text = initialBalance.ToString();
-
+        // active panel to start over if both bet and balance amount is 0
         if (balanceText.text == 0.ToString() && betText.text == 0.ToString())
         {
             Panel.SetActive(true);
+        }
+        // prevents balance from going to negative numbers
+        if (initialBalance < 0)
+        {
+            initialBalance = 0;
         }
     }
 
     //Increase how much u want to bet 
     public void IncreaseBet()
-    {
-        if(initialBet < initialBalance)           
+    {       
         initialBet += increaseBet;
+        // prevents bet from beign higher than your actual balance
         if (initialBet > initialBalance)
         {
             initialBet = initialBalance;
@@ -47,7 +48,8 @@ public class Betting : MonoBehaviour
     {
         if (initialBet > 0)
             initialBet -= increaseBet;
-        if(initialBet < 0)
+        // prevents bet from going to negative numbers
+        if (initialBet < 0)
         {
             initialBet = 0;
         }
@@ -91,10 +93,7 @@ public class Betting : MonoBehaviour
         foreach (Text text in winText)
             text.gameObject.SetActive(false);
     }
-    public void active()
-    {
-        Panel.SetActive(true);
-    }
+    // sets your balance back to 500 if you lose 
     public void Onclick()
     {
         initialBalance = 500;
@@ -166,6 +165,7 @@ public class Betting : MonoBehaviour
         WinAmount();
         WinTextActive();
         Invoke("WinTextDisable", 3f);
+        //prevents bet amount from being higher than balance
         if (initialBalance < initialBet)
         {
             initialBet = initialBalance;

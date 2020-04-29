@@ -19,10 +19,6 @@ public class LosePanel : MonoBehaviour
     {
         Panel.SetActive(true);
     }
-    public void deactivate()
-    {
-        Panel.SetActive(false);
-    }
     public void Onclick()
     {
         Balance.text = 500.ToString();

@@ -66,16 +66,17 @@ public class Spinandcheck : MonoBehaviour
         betManager.WinCondition();
     }
 
-    public void elo()
+    public void StartSpin()
     {
         StartCoroutine("pressSpin");
     }
 
-    public void delayed()
+    public void DelaySpin()
     {
+        // cooldown before next press 
         if (spinButtonPressTime + spinButtonDelay > Time.unscaledTime || betText.text == 0.ToString() || balanceText.text == 0.ToString())
             return;
         spinButtonPressTime = Time.unscaledTime;
-        Invoke("elo", delayStart);
+        Invoke("StartSpin", delayStart);
     }
 }
