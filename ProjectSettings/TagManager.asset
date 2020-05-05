@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Gem
+  - Lemon
+  - Cherry
+  - Watermelon
+  - Crown
+  - Seven
+  - Bar
+  - Canvas
+  - Betting
   layers:
   - Default
   - TransparentFX
