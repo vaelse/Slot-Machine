@@ -30,6 +30,7 @@ public class Spin : MonoBehaviour
             gameObject.gameObject.transform.position = new Vector2(gameObject.gameObject.transform.position.x, gameObject.gameObject.transform.position.y - 2.24f);
             yield return new WaitForSeconds(0.035f);
         }
+        //set the tag based on the position
         if (gameObject.transform.position.y < 17 && gameObject.transform.position.y > 13)
         {
             gameObject.tag = "Gem";
@@ -71,6 +72,7 @@ public class Spin : MonoBehaviour
 
     public void DelaySpin()
     {
+        // cooldown before next press 
         if (spinButtonPressTime + spinButtonDelay > Time.unscaledTime || betText.text == 0.ToString() || balanceText.text == 0.ToString())
             return;
         spinButtonPressTime = Time.unscaledTime;

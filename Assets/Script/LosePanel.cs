@@ -8,6 +8,7 @@ public class LosePanel : MonoBehaviour
     public Text Balance;
     public Text Bet;
     public GameObject Panel;
+    //restart game if your balance is equals to 0
     private void Update()
     {
         if (Balance.text == 0.ToString() && Bet.text == 0.ToString())

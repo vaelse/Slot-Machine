@@ -359,7 +359,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 239796445}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4011dc5ce4dac7f46a1c208009163f34, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c188e28e000e154993f404d3e48a258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   delayStart: 0.8
@@ -490,6 +490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92bcaf4081fdb1e46b84c1f245a7846d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Panel: {fileID: 862148445}
   Rows:
   - {fileID: 1282257591}
   - {fileID: 1626466634}
@@ -499,7 +500,6 @@ MonoBehaviour:
   winText:
   - {fileID: 386972652}
   - {fileID: 1512303772}
-  Panel: {fileID: 862148445}
 --- !u!4 &381791116
 Transform:
   m_ObjectHideFlags: 0
@@ -1627,6 +1627,7 @@ GameObject:
   - component: {fileID: 1282257593}
   - component: {fileID: 1282257592}
   - component: {fileID: 1282257595}
+  - component: {fileID: 1282257594}
   m_Layer: 0
   m_Name: Row
   m_TagString: Gem
@@ -1696,6 +1697,21 @@ Transform:
   m_Father: {fileID: 922227868}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1282257594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282257591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4011dc5ce4dac7f46a1c208009163f34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayStart: 0
+  betText: {fileID: 0}
+  balanceText: {fileID: 0}
 --- !u!114 &1282257595
 MonoBehaviour:
   m_ObjectHideFlags: 0

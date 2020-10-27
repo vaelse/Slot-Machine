@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Betting : MonoBehaviour
 {
+    public GameObject Panel;
     public GameObject[] Rows;
     public Text betText;
     public Text balanceText;
@@ -15,7 +16,6 @@ public class Betting : MonoBehaviour
     float spinButtonPressTime;
     float spinButtonDelay = 3f;
     float winMutliplier;
-    public GameObject Panel;
 
     private void Update()
     {         
@@ -43,6 +43,7 @@ public class Betting : MonoBehaviour
             initialBet = initialBalance;
         }
     }
+
     //Decrease how much u want to bet 
     public void DecreaseBet()
     {
@@ -58,7 +59,9 @@ public class Betting : MonoBehaviour
     //Subtract bet amount from balance
     public void SpinCost()
     {
-        if (spinButtonPressTime + spinButtonDelay > Time.unscaledTime || initialBalance < 0)
+        if(initialBet == 0)
+            return;
+        else if (spinButtonPressTime + spinButtonDelay > Time.unscaledTime || initialBalance < 0 )
             return;
         spinButtonPressTime = Time.unscaledTime;
         initialBalance -= initialBet;
