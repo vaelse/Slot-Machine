@@ -1,0 +1,105 @@
+[33mcommit 0195868b5c76a7a01ad78b5a25036d4c371c022d[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Maelse <niedzwiedzmaciej4@gmail.com>
+Date:   Wed May 6 05:45:47 2020 +0100
+
+    Canvas Anchor changes
+
+[33mcommit 32d408a1ebaf0cd8cc0fc33311853f8594f3578e[m
+Author: Maelse <niedzwiedzmaciej4@gmail.com>
+Date:   Wed May 6 05:20:27 2020 +0100
+
+    Revert "resolution chgange"
+    
+    This reverts commit 2545f0098258fa25506ee71f99237867fd733c11.
+
+[33mcommit 90e9b36eb5f821c4bd8643d5176a27c82c750a74[m
+Author: Maelse <niedzwiedzmaciej4@gmail.com>
+Date:   Tue May 5 19:59:05 2020 +0100
+
+    res change
+
+[33mcommit 2545f0098258fa25506ee71f99237867fd733c11[m
+Author: Maelse <niedzwiedzmaciej4@gmail.com>
+Date:   Tue May 5 19:58:53 2020 +0100
+
+    resolution chgange
+
+[33mcommit cd25b618b795a3c5bb26bb63458d73023e44a980[m
+Author: Maelse <niedzwiedzmaciej4@gmail.com>
+Date:   Tue May 5 16:53:24 2020 +0100
+
+    first build
+
+[33mcommit b9e114681268d15d7e8ddc061a5ea3dec5392cb5[m
+Author: Maelse <niedzwiedzmaciej4@gmail.com>
+Date:   Wed Apr 29 16:38:44 2020 +0100
+
+    comments
+
+[33mcommit 739cc06a991a9bf773b6c19632b257514333738c[m
+Author: Maelse <niedzwiedzmaciej4@gmail.com>
+Date:   Tue Apr 28 17:07:06 2020 +0100
+
+    Add Panel
+    
+    Shows panel if u balance is 0 to start again
+
+[33mcommit 2b2918bd389ae0fbdbde8e6d5ced0bcf1ae3229a[m
+Author: Maelse <niedzwiedzmaciej4@gmail.com>
+Date:   Mon Apr 27 17:00:58 2020 +0100
+
+    new statements
+
+[33mcommit 8f8430e4ac8e63feb40d2306cea82e02fb03df00[m
+Author: Maelse <niedzwiedzmaciej4@gmail.com>
+Date:   Wed Apr 22 16:46:35 2020 +0100
+
+    Text Animation
+
+[33mcommit 3dfc9a5d0e961a113f8c3651428fd82cc26bcd9e[m
+Author: Maelse <niedzwiedzmaciej4@gmail.com>
+Date:   Wed Apr 15 19:02:23 2020 +0100
+
+    Revert
+
+[33mcommit aa22e98573be1c54cfcef0c2b76728425887ca06[m
+Author: Maelse <niedzwiedzmaciej4@gmail.com>
+Date:   Wed Apr 15 17:06:33 2020 +0100
+
+    .
+
+[33mcommit a485255d5bd0978db89df27c0c81a7a739bba176[m
+Author: Maelse <niedzwiedzmaciej4@gmail.com>
+Date:   Fri Apr 10 16:27:43 2020 +0100
+
+    4
+
+[33mcommit 6753b2d89a1c1b10326cf22988d2a9d33742fd52[m
+Author: Maelse <niedzwiedzmaciej4@gmail.com>
+Date:   Wed Apr 1 21:23:41 2020 +0100
+
+    Betting
+
+[33mcommit 80675ac2254b11d98f7730b0f1c98f1633610625[m
+Author: Maelse <niedzwiedzmaciej4@gmail.com>
+Date:   Sun Mar 29 20:08:17 2020 +0100
+
+    Tag Code
+
+[33mcommit 33fb1fd210e8958406ad7070ad14cd3595409cc9[m
+Author: Maelse <niedzwiedzmaciej4@gmail.com>
+Date:   Sat Mar 28 20:15:04 2020 +0000
+
+    Add Rows
+
+[33mcommit b45ffd0f021e7260ef665c343fbd055b34c2b8c4[m
+Author: Maelse <niedzwiedzmaciej4@gmail.com>
+Date:   Fri Mar 27 19:37:43 2020 +0000
+
+    Slot machine project
+
+[33mcommit 5c5567e9fc1649b56cbc616285305a381ca644da[m
+Author: Maelse <niedzwiedzmaciej4@gmail.com>
+Date:   Fri Mar 27 19:37:16 2020 +0000
+
+    Initial commit

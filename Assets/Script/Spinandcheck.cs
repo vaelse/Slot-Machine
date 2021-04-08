@@ -18,8 +18,7 @@ public class Spinandcheck : MonoBehaviour
 
     IEnumerator pressSpin()
     {
-        var betManager = FindObjectOfType<Betting>();
-        int randomSpins = Random.Range(40, 60);
+        int randomSpins = Random.Range(40, 50);
         if (randomSpins % 2 != 0)
         {
             randomSpins += 1;
@@ -29,6 +28,7 @@ public class Spinandcheck : MonoBehaviour
             if (gameObject.transform.position.y <= -14f)
                 gameObject.transform.position = new Vector2(gameObject.transform.position.x, 16.8f);
             gameObject.gameObject.transform.position = new Vector2(gameObject.gameObject.transform.position.x, gameObject.gameObject.transform.position.y - 2.24f);
+
             yield return new WaitForSeconds(0.035f);
         }
         if (gameObject.transform.position.y < 17 && gameObject.transform.position.y > 13)
@@ -63,7 +63,12 @@ public class Spinandcheck : MonoBehaviour
         {
             gameObject.tag = "Gem";
         }
-        betManager.WinCondition();
+
+        if (gameObject.name == "Row3")
+        {
+            var betManager = FindObjectOfType<Betting>();
+            betManager.WinCondition();
+        }
     }
 
     public void StartSpin()
